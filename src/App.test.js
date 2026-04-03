@@ -21,6 +21,7 @@ test('allows selecting reward event and reward before create becomes enabled', a
 
   await userEvent.click(within(dialog).getByRole('button', { name: 'Select an event' }));
   await userEvent.click(screen.getByRole('option', { name: 'Cross $X in sales' }));
+  expect(screen.getByPlaceholderText('e.g. 100')).toHaveAttribute('type', 'number');
   fireEvent.change(screen.getByPlaceholderText('e.g. 100'), { target: { value: '100' } });
   await userEvent.click(within(dialog).getByRole('button', { name: 'Save' }));
 
@@ -59,6 +60,7 @@ test('opens nested duration options from the posts selection', async () => {
 
   await userEvent.click(within(dialog).getByRole('button', { name: 'Select an event' }));
   await userEvent.click(screen.getByRole('option', { name: 'Posts X times every Y period' }));
+  expect(screen.getByPlaceholderText('e.g. 4')).toHaveAttribute('type', 'number');
   fireEvent.change(screen.getByPlaceholderText('e.g. 4'), { target: { value: '44' } });
 
   await userEvent.click(within(dialog).getByRole('button', { name: 'Select duration' }));
@@ -76,6 +78,7 @@ test('lets reward with upgrade via commission tier panel', async () => {
 
   await userEvent.click(within(dialog).getByRole('button', { name: 'Select an event' }));
   await userEvent.click(screen.getByRole('option', { name: 'Cross $X in sales' }));
+  expect(screen.getByPlaceholderText('e.g. 100')).toHaveAttribute('type', 'number');
   fireEvent.change(screen.getByPlaceholderText('e.g. 100'), { target: { value: '100' } });
   await userEvent.click(within(dialog).getByRole('button', { name: 'Save' }));
 
@@ -121,6 +124,7 @@ test('shows a success toast when create reward is clicked in a valid state', asy
 
   await userEvent.click(within(dialog).getByRole('button', { name: 'Select a reward' }));
   await userEvent.click(screen.getByRole('option', { name: 'Flat $X bonus' }));
+  expect(screen.getByPlaceholderText('e.g. 100')).toHaveAttribute('type', 'number');
   fireEvent.change(screen.getByPlaceholderText('e.g. 100'), { target: { value: '100' } });
   await userEvent.click(within(dialog).getByRole('button', { name: 'Save' }));
 
