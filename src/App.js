@@ -1,25 +1,15 @@
-import logo from './logo.svg';
-import './App.css';
+import { Provider } from "react-redux";
+import GamificationPage from "./components/GamificationPage";
+import { createAppStore } from "./store/store";
 
-function App() {
+const store = createAppStore();
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Provider store={store}>
+      <GamificationPage />
+    </Provider>
   );
-}
+};
 
 export default App;
