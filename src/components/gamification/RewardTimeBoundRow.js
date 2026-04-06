@@ -35,7 +35,7 @@ const RewardTimeBoundRow = ({
           />
         </button>
       </div>
-      <p className="font-body text-caption text-text-secondary">
+      <p className="font-body text-helper text-text-secondary">
         Choose an end date to stop this reward automatically.
       </p>
       {enabled ? (
@@ -43,15 +43,15 @@ const RewardTimeBoundRow = ({
           <button
             aria-expanded={isCalendarOpen}
             aria-haspopup="dialog"
-            className={`flex h-control w-full items-center gap-2 rounded-field border bg-white px-3.5 text-left transition-colors ${
+            className={`flex h-control w-full items-center gap-3 rounded-field border bg-white px-4 text-left transition-colors ${
               isCalendarOpen ? "border-2 border-primary" : "border-border"
             }`}
             onClick={onToggleCalendar}
             type="button"
           >
-            <CalendarIcon className="h-5 w-5 text-text-secondary" />
+            <CalendarIcon className="h-6 w-6 shrink-0 text-text-secondary" />
             <span
-              className={`font-primary text-label ${
+              className={`font-body text-body ${
                 selectedDate ? "text-text" : "text-muted"
               }`}
             >

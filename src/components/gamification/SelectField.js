@@ -13,7 +13,7 @@ const SelectField = ({ children, isOpen, label, onToggle, placeholder, selectedL
         <button
           aria-expanded={isOpen}
           aria-haspopup="listbox"
-          className={`flex h-control w-full items-center justify-between rounded-button bg-white px-4 text-left transition-colors focus:outline-none focus:ring-2 focus:ring-primary/20 ${
+          className={`flex h-control w-full items-center justify-between rounded-button bg-white px-4 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 ${
             isOpen ? "border-2 border-primary" : "border border-border"
           }`}
           onClick={onToggle}

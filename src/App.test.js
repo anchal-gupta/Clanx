@@ -5,6 +5,9 @@ import App from './App';
 test('opens the gamification modal from the homepage', async () => {
   render(<App />);
 
+  expect(screen.getByRole('navigation', { name: 'Primary navigation' })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: 'Gamification' })).toHaveAttribute('aria-current', 'page');
+
   await userEvent.click(screen.getByRole('button', { name: 'Enable Gamification' }));
 
   expect(screen.getByRole('dialog', { name: 'Create your reward system' })).toBeInTheDocument();

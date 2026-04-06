@@ -1,15 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 const tokens = {
   buttonMaxWidth: "310px",
-  calendarWidth: "272px",
+  calendarWidth: "284px",
   cardHeight: "200px",
   cardIconInnerSize: "51.333px",
   cardIconOuterSize: "70px",
   cardIconSize: "30px",
   contentMaxWidth: "960px",
   controlHeight: "40px",
+  headerActionsGap: "16px",
+  headerAvatarSize: "32px",
+  headerBadgeSize: "20px",
+  headerNotificationSize: "26px",
   featureCardWidth: "292px",
-  gridBlockSize: "80px",
   heroContentWidth: "354px",
   heroHeight: "322px",
   modalMaxWidth: "400px",
@@ -17,7 +20,7 @@ const tokens = {
   tooltipMaxWidth: "340px",
   toggleThumbSize: "14px",
   toggleTrackHeight: "18px",
-  calendarCellSize: "28px",
+  calendarCellSize: "36px",
   calendarNavSize: "32px",
 };
 
@@ -27,19 +30,6 @@ const themeColors = {
   danger: "#e51c00",
   green: {
     10: "#2ED389",
-  },
-  grid: {
-    line: "rgba(197, 48, 197, 0.08)",
-    block1: "rgba(251, 207, 251, 0.5)",
-    block2: "rgba(249, 190, 249, 0.1)",
-    block3: "rgba(249, 190, 249, 0.2)",
-    block4: "rgba(253, 239, 253, 0.9)",
-    block5: "rgba(197, 48, 197, 0.12)",
-    block6: "rgba(246, 141, 246, 0.16)",
-    block7: "rgba(249, 190, 249, 0.18)",
-    block8: "rgba(249, 190, 249, 0.18)",
-    block9: "rgba(248, 177, 248, 0.22)",
-    block10: "rgba(121, 26, 121, 0.1)",
   },
   primary: {
     DEFAULT: "#c530c5",
@@ -87,6 +77,7 @@ module.exports = {
       fontSize: {
         body: ["16px", { lineHeight: "1.4" }],
         caption: ["12px", { lineHeight: "1.35" }],
+        helper: ["12px", { lineHeight: "1.5" }],
         "hero-title": ["28px", { lineHeight: "1.4" }],
         label: ["14px", { lineHeight: "1.4" }],
         "modal-title": ["20px", { lineHeight: "1.35" }],
@@ -107,6 +98,7 @@ module.exports = {
       },
       width: {
         calendar: tokens.calendarWidth,
+        sidebar: "188px",
         "toggle-track": "34px",
       },
       spacing: {
@@ -114,6 +106,10 @@ module.exports = {
         "card-icon": tokens.cardIconSize,
         "card-icon-inner": tokens.cardIconInnerSize,
         "card-icon-outer": tokens.cardIconOuterSize,
+        "header-actions": tokens.headerActionsGap,
+        "header-avatar": tokens.headerAvatarSize,
+        "header-badge": tokens.headerBadgeSize,
+        "header-notification": tokens.headerNotificationSize,
         "calendar-cell": tokens.calendarCellSize,
         "calendar-nav": tokens.calendarNavSize,
         control: tokens.controlHeight,
@@ -125,7 +121,6 @@ module.exports = {
         "feature-card-copy-top": "109px",
         "feature-card-copy-width": "260px",
         "feature-card": tokens.featureCardWidth,
-        "grid-block": tokens.gridBlockSize,
         "feature-grid-horizontal-padding": "14px",
         "feature-grid-overlap": "58px",
         "hero-content-top": "60px",
@@ -148,7 +143,9 @@ module.exports = {
         card: "8px",
         "card-icon-inner": "8.752px",
         "card-icon-outer": "13.128px",
-        "calendar-cell": "7px",
+        "calendar-cell": "8px",
+        "calendar-nav": "8px",
+        "calendar-popover": "8px",
         field: "12px",
         hero: "16px",
         modal: "12px",
@@ -162,13 +159,6 @@ module.exports = {
       inset: {
         "toggle-thumb-disabled": "2px",
         "toggle-thumb-enabled": "18px",
-      },
-      backgroundImage: {
-        "gamification-grid":
-          `linear-gradient(to right, ${themeColors.grid.line} 1px, transparent 1px), linear-gradient(to bottom, ${themeColors.grid.line} 1px, transparent 1px)`,
-      },
-      backgroundSize: {
-        grid: "94px 94px",
       },
     },
   },

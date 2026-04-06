@@ -146,7 +146,7 @@ const DropdownMenu = ({
                 aria-selected={isSelected}
                 className={`flex h-control w-full items-center justify-between rounded-card px-3 text-left text-body transition-colors ${
                   isDisabled
-                    ? "cursor-not-allowed text-muted opacity-50"
+                    ? "cursor-not-allowed text-muted"
                     : isSelected
                       ? "bg-magenta-2 text-magenta-12"
                       : "text-text hover:bg-magenta-3/60"

@@ -1,16 +1,13 @@
-import { gamificationGridBlocks } from "../constants/gamificationDecorations";
+import tileImage from "../components/icons/Tile.png";
 
 const GamificationGridBackground = () => (
-  <div className="pointer-events-none absolute inset-0 overflow-hidden rounded-hero opacity-60">
-    <div className="absolute inset-0 bg-gamification-grid bg-grid" />
-    {gamificationGridBlocks.map(({ className, ...position }, index) => (
-      <span
-        key={index}
-        className={`absolute hidden h-grid-block w-grid-block md:block ${className}`}
-        style={position}
-      />
-    ))}
-  </div>
+  <img
+    alt=""
+    aria-hidden="true"
+    className="pointer-events-none absolute inset-0 h-full w-full rounded-hero object-fill"
+    draggable="false"
+    src={tileImage}
+  />
 );
 
 export default GamificationGridBackground;

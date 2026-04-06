@@ -19,10 +19,10 @@ import ArrowIcon from "./icons/ArrowIcon";
 const weekLabels = ["Su", "Mo", "Tu", "We", "Th", "Fr", "Sa"];
 
 const CalendarCaption = ({ displayMonth, canGoPrevious, canGoNext, onPrevious, onNext }) => (
-  <div className="grid grid-cols-[32px_minmax(0,1fr)_32px] items-center gap-1.5 px-0 pb-2">
+  <div className="grid grid-cols-[32px_minmax(0,1fr)_32px] items-center gap-1 px-0 pb-2">
     <button
       aria-label="Previous month"
-      className="flex h-calendar-nav w-calendar-nav items-center justify-center rounded-button border border-border bg-white text-text-secondary transition-colors hover:bg-surface-hover hover:text-text disabled:cursor-not-allowed disabled:opacity-40"
+      className="flex h-calendar-nav w-calendar-nav items-center justify-center rounded-calendar-nav border border-border bg-white text-text-secondary transition-colors hover:bg-surface-hover hover:text-text disabled:cursor-not-allowed disabled:opacity-40"
       disabled={!canGoPrevious}
       onClick={onPrevious}
       type="button"
@@ -34,7 +34,7 @@ const CalendarCaption = ({ displayMonth, canGoPrevious, canGoNext, onPrevious, o
     </div>
     <button
       aria-label="Next month"
-      className="flex h-calendar-nav w-calendar-nav items-center justify-center rounded-button border border-border bg-white text-text-secondary transition-colors hover:bg-surface-hover hover:text-text disabled:cursor-not-allowed disabled:opacity-40"
+      className="flex h-calendar-nav w-calendar-nav items-center justify-center rounded-calendar-nav border border-border bg-white text-text-secondary transition-colors hover:bg-surface-hover hover:text-text disabled:cursor-not-allowed disabled:opacity-40"
       disabled={!canGoNext}
       onClick={onNext}
       type="button"
@@ -116,7 +116,7 @@ const CalendarPopover = ({ calendarMonth, onClose, onMonthChange, onSelectDate, 
 
   return (
     <div
-      className="absolute left-0 top-full z-40 mt-2 w-calendar rounded-tooltip border border-border bg-white p-2 shadow-popup"
+      className="absolute left-0 top-full z-40 mt-2 w-calendar rounded-calendar-popover border border-border bg-white p-4 shadow-popup"
       ref={rootRef}
     >
       <CalendarCaption
@@ -126,17 +126,17 @@ const CalendarPopover = ({ calendarMonth, onClose, onMonthChange, onSelectDate, 
         onNext={handleNext}
         onPrevious={handlePrevious}
       />
-      <div className="grid grid-cols-7 px-0.5">
+      <div className="grid grid-cols-7 px-0">
         {weekLabels.map((label) => (
           <div
-            className="flex h-7 items-center justify-center font-body text-caption font-normal text-text-secondary"
+            className="flex h-9 items-center justify-center font-body text-label font-normal text-text-secondary"
             key={label}
           >
             {label}
           </div>
         ))}
       </div>
-      <div className="mt-2 grid grid-cols-7 gap-y-2">
+      <div className="mt-0 grid grid-cols-7 gap-y-0">
         {calendarDays.map((day) => {
           const isOutsideMonth = !isSameMonth(day, month);
           const isDisabled = isOutsideMonth || isBefore(day, minDate);
@@ -145,7 +145,7 @@ const CalendarPopover = ({ calendarMonth, onClose, onMonthChange, onSelectDate, 
           return (
             <button
               aria-disabled={isDisabled}
-              className={`flex h-calendar-cell w-calendar-cell items-center justify-center rounded-calendar-cell font-body text-caption font-normal leading-[1.4] transition-colors ${
+              className={`flex h-calendar-cell w-calendar-cell items-center justify-center rounded-calendar-cell font-body text-label font-medium leading-[1.4] transition-colors ${
                 isSelected
                   ? "bg-primary text-primary-foreground hover:bg-primary hover:text-primary-foreground"
                   : isDisabled

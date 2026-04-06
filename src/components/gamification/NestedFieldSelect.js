@@ -24,7 +24,7 @@ const NestedFieldSelect = ({ field, isOpen, onChange, onClose, onToggle, value }
       <button
         aria-expanded={isOpen}
         aria-haspopup="listbox"
-        className={`flex h-control w-full items-center justify-between rounded-button border bg-white px-3 text-left transition-colors ${
+        className={`flex h-control w-full items-center justify-between rounded-button border bg-white px-3 text-left transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/20 ${
           isOpen ? "border-2 border-primary" : "border-border"
         }`}
         onClick={onToggle}

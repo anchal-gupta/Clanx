@@ -2,7 +2,7 @@ import GamificationGridBackground from "./GamificationGridBackground";
 import PrimaryButton from "./PrimaryButton";
 
 const GamificationHero = ({ enableButtonRef, onEnable }) => (
-  <section className="relative h-hero overflow-hidden rounded-hero border border-border/60 bg-background">
+  <section className="relative h-hero overflow-hidden rounded-hero">
     <GamificationGridBackground />
     <div className="relative z-10 mx-auto flex w-full max-w-hero-content flex-col items-center gap-6 px-6 pt-hero-content-top text-center md:px-0">
       <div className="space-y-2">

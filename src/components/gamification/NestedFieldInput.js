@@ -2,7 +2,7 @@ const NestedFieldInput = ({ autoFocus = false, field, value, onChange }) => {
   const isNumericField = field.inputMode === "numeric";
 
   return (
-    <label className="flex h-control items-stretch overflow-hidden rounded-button border border-primary bg-white">
+    <label className="flex h-control items-stretch overflow-hidden rounded-button border-2 border-primary bg-white">
       {field.prefix ? (
         <span className="flex w-control items-center justify-center border-r border-primary/20 font-body text-body text-text-secondary">
           {field.prefix}
